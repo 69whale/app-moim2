@@ -82,6 +82,9 @@ public class MoimDetailController extends HttpServlet {
 		
 		//뷰로 넘기는 작업은 패스
 		
+		
+		
+		
 		req.getRequestDispatcher("/WEB-INF/views/moim/detail.jsp").forward(req, resp);
 		
 	}
