@@ -5,12 +5,20 @@
 <mapper namespace="replys">
     
     <insert id="create" parameterType="java.util.HashMap">
-       INSERT INTO REPLYS(ID, MOIM_ID, WRITER,COMMENT) 
-       VALUES(REPLYS_SEQ.NEXTVAL, #{moimId}, #{writer}, #{comment})
+       INSERT INTO REPLYS(ID, MOIM_ID, WRITER, MENT) 
+       VALUES(REPLYS_SEQ.NEXTVAL, #{moimId}, #{writer}, #{ment})
     </insert>
     
     <select id="findByMoimId" resultType="data.Reply" parameterType="java.lang.String" >
         SELECT * FROM REPLYS WHERE MOIM_ID=#{moimId} ORDER BY WRITED ASC
     </select>
+    <insert id="createByVo" parameterType="data.Reply">
+		INSERT INTO REPLYS(ID,
+		MOIM_ID, WRITER, MENT)
+		VALUES(REPLYS_SEQ.NEXTVAL, #{moimId},
+		#{writer}, #{ment})
+	</insert>
+        
+		
  
 </mapper>

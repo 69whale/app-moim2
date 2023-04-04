@@ -9,8 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
 import data.Attendance;
 import data.MOIM;
+import data.Reply;
 import data.User;
 import repository.Attendances;
 import repository.MOIMS;
@@ -45,6 +49,23 @@ public class MoimDetailController extends HttpServlet {
 		}
 		req.setAttribute("attendances", attendances);
 		
+		
+		
+		
+		//모임 댓글 가져오기 ===============================
+		SqlSessionFactory factory = (SqlSessionFactory)req.getServletContext().getAttribute("sqlSessionFactory");
+	    SqlSession sqlSession = factory.openSession();
+		List<Reply> replys =sqlSession.selectList("replys.findByMoimId", id);
+		sqlSession.close();
+				
+
+	    req.setAttribute("replys", replys);
+		
+		
+		
+		
+		
+		
 		//로그인을 안하고 들어오면 터짐
 		User logonUser = (User)req.getSession().getAttribute("logonUser");
 		if(logonUser == null) {
@@ -78,6 +99,11 @@ public class MoimDetailController extends HttpServlet {
 //		req.setAttribute("moim", moim);
 //		req.setAttribute("manager", manager);
 //		req.setAttribute("attendances", attendances);
+		
+		
+		
+		
+		
 		
 		
 		//뷰로 넘기는 작업은 패스
