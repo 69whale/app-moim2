@@ -53,6 +53,8 @@ public class MoimJoinTaskController extends HttpServlet {
 	    	sqlSession.update("moims.updateCurrentPerson", target);
 	    	
 	    }
+	    
+	    
 	
 		// 처리 결과에 따라서 적절한 응답.
 	    //sqlSession.commit();

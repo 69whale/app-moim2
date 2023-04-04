@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="replys">
-    
-    <select id="findByMoimId" resultType="data.Reply"
+	<select id="findByMoimId" resultType="data.Reply"
 		parameterType="string">
 		SELECT * FROM REPLYS WHERE MOIM_ID=#{fdsmakfdmsaklfdsmaklfdsmalkfdsamklfdsamklfdsanklfdsanklfdsa } ORDER BY
 		WRITED ASC
@@ -21,7 +20,4 @@
 		VALUES(REPLYS_SEQ.NEXTVAL, #{moimId},
 		#{writer}, #{ment})
 	</insert>
-        
-		
- 
 </mapper>

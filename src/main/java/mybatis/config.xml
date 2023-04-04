@@ -21,6 +21,7 @@
   <mappers>
     <mapper resource="mybatis/mapper/attendances-mapper.xml"/>
     <mapper resource="mybatis/mapper/moims-mapper.xml"/>
+    <mapper resource="mybatis/mapper/replys-mapper.xml"/>
     <mapper resource="mybatis/mapper/users-mapper.xml"/>
   </mappers>
 </configuration>
