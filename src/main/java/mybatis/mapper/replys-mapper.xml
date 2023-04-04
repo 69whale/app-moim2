@@ -5,7 +5,7 @@
 <mapper namespace="replys">
 	<select id="findByMoimId" resultType="data.Reply"
 		parameterType="string">
-		SELECT * FROM REPLYS WHERE MOIM_ID=#{fdsmakfdmsaklfdsmaklfdsmalkfdsamklfdsamklfdsanklfdsanklfdsa } ORDER BY
+		SELECT * FROM REPLYS WHERE MOIM_ID=#{id } ORDER BY
 		WRITED ASC
 	</select>
 	<insert id="create" parameterType="hashmap">
